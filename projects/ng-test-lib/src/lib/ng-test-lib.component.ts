@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'te-st-NgTestLib',
   template: `
     <p>
       ng-test-lib works!
+    </p>
+    <p>
+    {{text}}
     </p>
     <input type="text"/>
   `,
@@ -13,6 +16,8 @@ import { Component, OnInit } from '@angular/core';
 export class NgTestLibComponent implements OnInit {
 
   constructor() { }
+
+  @Input() text: string
 
   ngOnInit() {
   }
