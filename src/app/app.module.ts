@@ -5,7 +5,10 @@ import { AppComponent } from './app.component';
 import { MoviesComponent } from './movies/movies.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { HttpClientModule } from '@angular/common/http'
-import { MoviesService } from './movies/movies.service'
+import { MoviesService } from './movies/movies.service';
+import { MovieComponent } from './movie/movie.component'
+import { SelectedMovieComponent } from './selected-movie/selected-movie.component';
+import { routing } from './app.router'
 
 
 @NgModule({
@@ -13,12 +16,14 @@ import { MoviesService } from './movies/movies.service'
     AppComponent,
     MoviesComponent,
     NavigationComponent,
-
+    MovieComponent,
+    SelectedMovieComponent
   ],
   imports: [
     BrowserModule, 
     NgTestLibModule,
-    HttpClientModule
+    HttpClientModule,
+    routing
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]
