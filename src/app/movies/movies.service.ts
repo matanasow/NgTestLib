@@ -37,4 +37,8 @@ export class MoviesService {
     getMovie(id: number){
         return this.http.get(`${this.path}${this.movie}` + id + `${this.movieAuth}${apiKey}`)
     }
+    findAMovie(search){
+        debugger
+        return this.http.get(`${this.path}`+ "search/movie?query=" + search + "&api_key=" + apiKey)
+    }
 }

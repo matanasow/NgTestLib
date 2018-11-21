@@ -13,8 +13,19 @@ popular: Array<MovieModel>
 theaters: Array<MovieModel>
 kids: Array<MovieModel>
 drama: Array<MovieModel>
-
+searchedRes: any
+isSearch: boolean
   constructor(private moviesService: MoviesService) { }
+
+  search(myQuery){
+    let searchValue = myQuery['search']
+    this.moviesService.findAMovie(searchValue)
+    .subscribe(data => {
+      this.searchedRes = data
+      console.log(this.searchedRes)
+      this.isSearch = true
+    })
+  }
 
   ngOnInit() {
     this.moviesService.getPopular().subscribe(data => this.popular = data.results)
