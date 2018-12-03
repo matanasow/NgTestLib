@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { NgTestLibModule } from '../../projects/ng-test-lib/src/lib/ng-test-lib.module'
 import { HttpClientModule } from '@angular/common/http'
 import { routing } from './app.router'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 //Components
 import { AppComponent } from './app.component';
@@ -15,6 +15,7 @@ import { SelectedMovieComponent } from './selected-movie/selected-movie.componen
 
 //Services
 import { MoviesService } from './movies/movies.service';
+import { UserFormComponent } from './user-form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,15 @@ import { MoviesService } from './movies/movies.service';
     MoviesComponent,
     NavigationComponent,
     MovieComponent,
-    SelectedMovieComponent
+    SelectedMovieComponent,
+    UserFormComponent
   ],
   imports: [
     BrowserModule, 
     NgTestLibModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     routing
   ],
   providers: [MoviesService],

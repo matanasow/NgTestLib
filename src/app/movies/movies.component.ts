@@ -22,8 +22,9 @@ isSearch: boolean
     this.moviesService.findAMovie(searchValue)
     .subscribe(data => {
       this.searchedRes = data
-      console.log(this.searchedRes)
+      if(this.searchedRes.length > 0){
       this.isSearch = true
+      }
     })
   }
 
